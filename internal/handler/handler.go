@@ -16,5 +16,7 @@ func Handle(URLStore *models.URLStore, mu *sync.Mutex) {
 
 	r.GET("/:short", shortener.RedirectURL(URLStore, mu))
 
+	r.GET("/topdomains", shortener.GetMostVisitedDomainsHandler(URLStore, mu))
+
 	r.Run(":8080")
 }
