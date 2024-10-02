@@ -21,4 +21,8 @@ stop:
 prune:
 	docker container prune -f
 
+# Run tests
+test:
+	go test ./... -v
+
 .PHONY: build run clean stop prune
